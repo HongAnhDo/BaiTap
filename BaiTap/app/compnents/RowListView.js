@@ -25,9 +25,9 @@ export default class RowListView extends Component{
 
 
     render(){
-        
+        const {navigate} = this.props.This.props.navigation;
         return(
-            <TouchableOpacity onPress= {() => this.props.navigate('Screen_Detail')} style = {styleRow.row}>
+            <TouchableOpacity onPress= {() => navigate('Screen_Detail')} style = {styleRow.row}>
                <Image style = {styleRow.imgProduct} source = {{uri: this.props.item.image}}  resizeMode = 'cover'></Image>
                <View style = {styleRow.containerRight}>
                    <View style = {styleRow.containerRightTop}>

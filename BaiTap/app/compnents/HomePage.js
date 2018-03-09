@@ -46,7 +46,7 @@ export default class HomePage extends Component{
 
                 <View style = {styleMain.containerHead}>
 
-                    {this._renderToolbar()}
+                    {this._renderToolbar(this)}
 
                     {this._renderSearch()}
 
@@ -57,7 +57,7 @@ export default class HomePage extends Component{
                 <View style = {styleMain.containerBody}>
                     <View style = {styleMain.containerMiddle}> 
                         <Image style = {styleMain.imgContainerMiddle} source = {iconCameraSearch} resizeMode = 'contain'></Image>
-                        <Text style = {styleMain.textContainerMiddle}></Text>
+                        <Text style = {styleMain.textContainerMiddle}>4200 SE 82nd Ave,Portland</Text>
                         <Image style = {styleMain.imgContainerMiddle} source = {iconNext} resizeMode = 'contain'></Image>
                     </View>
 
@@ -65,7 +65,7 @@ export default class HomePage extends Component{
                     <ScrollView>
                         <ListView 
                             dataSource={this.state.dataSource}
-                            renderRow={item=> <RowListView  item= {item} ham ={this}/>}>         
+                            renderRow={item=> <RowListView  item= {item} This = {this}/>}>         
                         </ListView>
                     </ScrollView>
                            
@@ -84,7 +84,7 @@ export default class HomePage extends Component{
         />
     }
 
-    _renderToolbar(){
+    _renderToolbar(This){
         return(
             <View style={styleMain.toolbarContainer} >
                 <TouchableOpacity onPress={this.onPress} >
@@ -106,8 +106,8 @@ export default class HomePage extends Component{
                 {Platform.OS === 'ios' && <TextInput  ref = {input => { this.textInput = input }} 
                 style = {styleMain.textInputSearch}>Hong anh do</TextInput>}
                 
-                {Platform.OS === 'android' && <TextInput ref = {input => { this.textInput = input }} 
-                style = {styleMain.textInputSearch} underlineColorAndroid="transparent"  autoCorrect = {false} placeholder = {'Tìm kiếm'}></TextInput>}
+                {Platform.OS === 'android' && <TextInput ref = {input => { this.textInput = input }} style = {styleMain.textInputSearch} 
+                underlineColorAndroid="transparent"  autoCorrect = {false} placeholder = {'Tìm kiếm'}></TextInput>}
                         
                 <TouchableOpacity onPress={this._clearTextSearch.bind(this)}>
                     <Image style = {styleMain.icon} source = {iconClose} resizeMode= 'contain' /> 
