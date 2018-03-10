@@ -46,7 +46,7 @@ export default class HomePage extends Component{
 
                 <View style = {styleMain.containerHead}>
 
-                    {this._renderToolbar(this)}
+                    {this._renderToolbar()}
 
                     {this._renderSearch()}
 
@@ -84,7 +84,7 @@ export default class HomePage extends Component{
         />
     }
 
-    _renderToolbar(This){
+    _renderToolbar(){
         return(
             <View style={styleMain.toolbarContainer} >
                 <TouchableOpacity onPress={this.onPress} >

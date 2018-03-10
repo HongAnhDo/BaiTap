@@ -17,17 +17,17 @@ export default class RowListView extends Component{
         this.state= {
             priceLarge : Math.floor(this.props.item.price),
             priceSmall : (this.props.item.price * 100 % 100 < 10 ? "0": "") + this.props.item.price * 100 % 100,
-            numberStar: Math.round(this.props.item.star)
+            numberStar: Math.round(this.props.item.star),
+            pro: this.props.item
         }
         
     }
 
 
-
     render(){
         const {navigate} = this.props.This.props.navigation;
         return(
-            <TouchableOpacity onPress= {() => navigate('Screen_Detail')} style = {styleRow.row}>
+            <TouchableOpacity onPress= {() => navigate('Screen_Detail', {pro:this.props.item})} style = {styleRow.row}>
                <Image style = {styleRow.imgProduct} source = {{uri: this.props.item.image}}  resizeMode = 'cover'></Image>
                <View style = {styleRow.containerRight}>
                    <View style = {styleRow.containerRightTop}>
