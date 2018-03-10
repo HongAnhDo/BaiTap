@@ -10,6 +10,7 @@ import RowListView from './RowListView'
 
 const windowWidth = Dimensions.get('window').width;
 const flatListData = JSON.parse(JSON.stringify(require('../data/data.json')));
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 export default class HomePage extends Component{
     
@@ -23,16 +24,9 @@ export default class HomePage extends Component{
         iconCameraSearch =  require('../imgs/iconCameraSearch.png');
 
         this.state={
-            dataSource :new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+            dataSource: ds.cloneWithRows(flatListData)
         }
-
         
-    }
-
-    componentDidMount(){    
-        this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(flatListData)
-        });
     }
 
 

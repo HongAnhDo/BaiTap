@@ -21,16 +21,10 @@ const  styleDetail = StyleSheet.create({
         fontSize: 16
     },
 
+
     imageProduce:{
-
-        height: 300,
-        width: windowWidth,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        borderColor: '#ddd',
-        borderWidth: 1
-
+        height: 260,
+        width: windowWidth
     },
 
     toolbarContainer: {
@@ -42,10 +36,27 @@ const  styleDetail = StyleSheet.create({
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
-        marginBottom: 5,
         borderColor: '#ddd',
         borderWidth: 1
        
+    },
+    iconStar:{
+        height: 20,
+        width: 20,
+        marginTop: 2,
+        marginRight: 1
+    },
+    containerEvaluate:{
+        flex: 1,
+        height: 50,
+        flexDirection: 'row',
+        marginTop: 5,
+        marginRight: 5
+
+    },
+    numberEvaluate:{
+        marginLeft: 5,
+        fontSize: 14
     }
 })
 
